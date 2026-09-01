@@ -34,8 +34,8 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <!-- project.build.outputTimestamp is managed by Maven plugins, see https://maven.apache.org/guides/mini/guide-reproducible-builds.html -->
     <project.build.outputTimestamp>2025-12-04T15:53:46Z</project.build.outputTimestamp>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+	<maven.compiler.source>25</maven.compiler.source>
+	<maven.compiler.target>25</maven.compiler.target>
     <commons.componentid>text</commons.componentid>
     <commons.packageId>text</commons.packageId>
     <commons.module.name>org.apache.commons.text</commons.module.name>
@@ -79,6 +79,14 @@
     <commons.jacoco.branchRatio>0.95</commons.jacoco.branchRatio>
     <commons.jacoco.complexityRatio>0.94</commons.jacoco.complexityRatio>
     <commons.jacoco.lineRatio>0.98</commons.jacoco.lineRatio>    
+	<maven-compiler.version>3.15.0</maven-compiler.version>
+	<maven-toolchains.version>3.3.0</maven-toolchains.version>
+	<graalvm-buildtools.version>1.1.10</graalvm-buildtools.version>
+	<!--jaxb-api.version>2.4.0-b180725.0427</jaxb-api.version-->
+	<!--spring.version>4.0.5</spring.version-->
+	<!--mcf.version>3.1.42</mcf.version-->
+	<js.output.name>commons-text.js</js.output.name>
+	<!--slf4j.version>2.0.17-gov4j-1</slf4j.version-->
   </properties>
   <dependencies>
     <dependency>
@@ -422,11 +430,21 @@
     <url>https://issues.apache.org/jira/browse/TEXT</url>
   </issueManagement>
   <distributionManagement>
-    <site>
+    <!--site>
       <id>apache.website</id>
       <name>Apache Commons Site</name>
-      <url>scm:svn:https://svn.apache.org/repos/infra/websites/production/commons/content/proper/commons-text/</url>
-    </site>
+      <url>scm:svn:https://svn.apache.org/repos/infra/websites/production/commons/content/proper/commons-codec/</url>
+    </site-->
+	<repository>
+		<id>nexus-releases</id>
+		<name>Nexus release repository</name>
+		<url>http://nexus3.mcf.markhome.server:8081/repository/mcf.markhome.server-hosted/</url>
+	</repository>
+	<snapshotRepository>
+		<id>nexus-snapshots</id>
+		<name>Nexus release repository</name>
+		<url>http://nexus3.mcf.markhome.server:8081/repository/mcf.markhome.server-hosted/</url>
+	</snapshotRepository>
   </distributionManagement>
   <ciManagement>
     <system>GitHub</system>
